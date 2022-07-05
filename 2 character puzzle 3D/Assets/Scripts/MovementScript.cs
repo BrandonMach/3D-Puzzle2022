@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovmentScript : MonoBehaviour
+public class MovementScript : MonoBehaviour
 {
     public float speed;
     public float jumpSpeed;
