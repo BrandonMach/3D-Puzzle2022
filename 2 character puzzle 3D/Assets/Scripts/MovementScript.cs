@@ -45,21 +45,7 @@ public class MovementScript : MonoBehaviour
 
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
-        if (characterController.isGrounded)
-        {
-            ySpeed = -0.5f;
-
-            characterController.stepOffset = originalStepOffset;
-
-            if (Input.GetButtonDown("Jump"))
-            {
-                ySpeed = jumpSpeed;
-            }
-        }
-        else
-        {
-            characterController.stepOffset = 0;
-        }
+        GroundCheck();
 
 
 
@@ -75,7 +61,25 @@ public class MovementScript : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
         }
+    }
 
+    public void GroundCheck()
+    {
+        if (characterController.isGrounded)
+        {
+            ySpeed = -0.5f;
+
+            characterController.stepOffset = originalStepOffset;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                ySpeed = jumpSpeed;
+            }
+        }
+        else
+        {
+            characterController.stepOffset = 0;
+        }
 
     }
 }
