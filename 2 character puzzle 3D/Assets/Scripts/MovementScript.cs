@@ -46,6 +46,8 @@ public class MovementScript : MonoBehaviour
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
         GroundCheck();
+        
+        
 
 
 
@@ -82,4 +84,5 @@ public class MovementScript : MonoBehaviour
         }
 
     }
+    
 }
