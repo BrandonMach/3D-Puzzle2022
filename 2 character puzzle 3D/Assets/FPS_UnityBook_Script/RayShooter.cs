@@ -40,7 +40,7 @@ public class RayShooter : MonoBehaviour
         }
     }
 
-    private IEnumerator BulletIndicator(Vector3 pos)
+    private IEnumerator BulletIndicator(Vector3 pos) //Spawn a bullet hole when not hitting a target/enemy
     {
         GameObject bulletHole = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         bulletHole.transform.position = pos;
@@ -50,7 +50,7 @@ public class RayShooter : MonoBehaviour
         Destroy(bulletHole);
     }
 
-    private void OnGUI()
+    private void OnGUI() //Aim, Crosshair
     {
         int size = 12;
         float posX = _camera.pixelWidth / 2 - size / 4;

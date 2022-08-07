@@ -33,7 +33,7 @@ public class WanderingAI : MonoBehaviour
                 GameObject hitObject = hit.transform.gameObject;
                 if (hitObject.GetComponent<PlayerCharacter>())
                 {
-                    if (fireball == null)
+                    if (fireball == null) //if no fireballs shoot a new one
                     {
                         fireball = Instantiate(fireballPrefab) as GameObject;
                         fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
@@ -43,7 +43,7 @@ public class WanderingAI : MonoBehaviour
 
             }
             else
-            {
+            { //Enemy is near wall and changes direction
                 if (hit.distance < obstacleRange)
                 {
                     float angle = Random.Range(-110, 110);
